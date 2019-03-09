@@ -2,6 +2,11 @@
 server:
   port: 2000
 
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://206.189.39.195:8061/eureka/
+
 spring:
   http:
     encoding:
