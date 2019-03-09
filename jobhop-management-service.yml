@@ -1,0 +1,40 @@
+# Config
+server:
+  port: 2000
+
+spring:
+  http:
+    encoding:
+      enabled: true
+      charset: UTF-8
+  datasource:
+    url: jdbc:mysql://125.212.248.162:33060/jobhop-staging?useSSL=false&serverTimezone=GMT&useLegacyDatetimeCode=false
+    data-username: root
+    data-password: Kg3LHRdMbkUv9TCGMu6UfLSxpt9mA6SH
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+# Value
+rest:
+  api:
+    link: https://api-uat.jobhop.vn/api/account/login
+app:
+  jwtSecret: JWTSuperSecretKey
+  jwtExpirationInMs: 86400000
+
+# Logging
+logging:
+  level:
+    com:
+      vn:
+        app: INFO
+    org:
+      springframework:
+        web: INFO
+      hibernate: ERROR
+        SQL: DEBUG
+  file: logs/management-backend.log
+  pattern:
+    console: %clr(%d{dd-MM-yy HH:mm:ss.SSS}){blue} %clr(%-5p) %clr(${PID}){faint} %clr(---){faint} %clr([%-40.40logger{0}]){cyan} %clr(:){red} %clr(%m) %n
+    file: %clr(%d{dd-MM-yy HH:mm:ss.SSS}){blue} %clr(%-5p) %clr(${PID}){faint} %clr(---){faint} %clr([%-40.40logger{0}]){cyan} %clr(:){red} %clr(%m) %n
